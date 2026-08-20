@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ethan Brooks</title>
+  <meta name="description" content="Personal website of Ethan Brooks.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav aria-label="Main">
+      <a class="site-name" href="/">Ethan Brooks</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <h1>Hi, I'm Ethan.</h1>
+      <p class="lede">
+        One-line summary of what you do and what you care about. Replace this with
+        something that sounds like you.
+      </p>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        A short paragraph or two: what you work on, how you got here, what you're
+        looking for next. Keep it to a few sentences — people skim.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="card-list">
+        <li class="card">
+          <h3><a href="#">Project name</a></h3>
+          <p>One sentence on what it is and why it was interesting to build.</p>
+        </li>
+        <li class="card">
+          <h3><a href="#">Project name</a></h3>
+          <p>One sentence on what it is and why it was interesting to build.</p>
+        </li>
+        <li class="card">
+          <h3><a href="#">Project name</a></h3>
+          <p>One sentence on what it is and why it was interesting to build.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Best way to reach me is
+        <a href="mailto:you@example.com">you@example.com</a>.
+      </p>
+      <ul class="nav-links">
+        <li><a href="https://github.com/">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year">2026</span> Ethan Brooks</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
