@@ -194,27 +194,10 @@ a {
    panel absorbs the slack and the collage still reaches the bottom edge,
    instead of leaving a band of bare background. */
 .collage {
-  position: relative;
   display: grid;
   grid-template-columns: repeat(24, 1fr);
   grid-template-rows: auto 1fr;
   min-height: 100vh;
-}
-
-.resume-back {
-  position: absolute;
-  z-index: 3;
-  top: 0.9rem;
-  left: 1.1rem;
-  font-size: 0.875rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgb(var(--red));
-}
-
-.resume-back:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
 }
 
 .rpanel--experience {
@@ -278,10 +261,6 @@ a {
 
 /* Extra inset on the edges another panel overlaps, so body text stays on a
    single fill and out of the blended corners. */
-.rpanel--experience .rpanel-body {
-  padding-top: 2.9rem; /* clears the back link in the corner above it */
-}
-
 .rpanel--projects .rpanel-body {
   padding-right: 22%;
   padding-bottom: 4rem;
@@ -373,7 +352,6 @@ a {
     grid-template-rows: none;
     gap: 0.75rem;
     min-height: 0;
-    padding-top: 2.75rem;
   }
 
   .rpanel--experience,
@@ -403,10 +381,6 @@ a {
 @media print {
   .page-resume {
     padding: 0;
-  }
-
-  .resume-back {
-    display: none;
   }
 
   /* Overlapping translucent fills waste ink and hurt legibility on paper. */
