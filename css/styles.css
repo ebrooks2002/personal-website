@@ -263,10 +263,16 @@ a {
   gap: 0.1rem 1.25rem;
 }
 
+/* Semi-bold rather than bold. Both the entry titles and the skills labels
+   use 600 so they stay in step. */
+.entry-title,
+.rpanel strong {
+  font-weight: 600;
+}
+
 .entry-title {
   margin: 0;
   font-size: 1.0625rem;
-  font-weight: 700;
   line-height: 1.3;
 }
 
