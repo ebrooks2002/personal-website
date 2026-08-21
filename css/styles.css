@@ -157,19 +157,10 @@ a {
 
 /* ---- Resume page ------------------------------------------------------ */
 
-/* Four overlapping translucent panels, one per section. Unlike the homepage
-   these are content-sized rather than pinned to a fixed-ratio canvas, so a
-   long section grows its own panel instead of clipping.
-
-   Alphas are held near 0.42 on purpose: at that strength a single fill and a
-   two-panel blend both stay light enough for --ink body text to clear 4.5:1.
-   Pushing them toward the saturation of the mockup fails that. */
+/* Four unfilled regions, one per section, laid out where the collage put
+   them. The panel fills are gone; only the grid geometry and the text
+   remain. Heading tints are what's left of each section's colour. */
 :root {
-  --c-experience: 110 110 110;
-  --c-projects: 96 112 32;
-  --c-education: 176 40 34;
-  --c-skills: 38 98 172;
-
   --h-experience: #2b2b2b;
   --h-projects: #26350f;
   --h-education: #521010;
@@ -221,46 +212,13 @@ a {
   margin-top: -2.5rem;
 }
 
-/* Same layering trick as the homepage panels: the fill is a ::before at
-   z-index 1 and the text is at z-index 2, with the panels themselves left at
-   `z-index: auto` so they open no stacking context. Every panel's text
-   therefore paints above every panel's fill and no text gets tinted. */
-.rpanel {
-  position: relative;
-}
-
-.rpanel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
 .rpanel-body {
-  position: relative;
-  z-index: 2;
   padding: clamp(1.25rem, 2.5vw, 2rem) clamp(1rem, 2vw, 1.75rem)
            clamp(1.5rem, 3vw, 2.25rem);
 }
 
-.rpanel--experience::before {
-  background: rgb(var(--c-experience) / 0.2);
-}
-
-.rpanel--projects::before {
-  background: rgb(var(--c-projects) / 0.42);
-}
-
-.rpanel--education::before {
-  background: rgb(var(--c-education) / 0.42);
-}
-
-.rpanel--skills::before {
-  background: rgb(var(--c-skills) / 0.42);
-}
-
-/* Extra inset on the edges another panel overlaps, so body text stays on a
-   single fill and out of the blended corners. */
+/* The panels carry no fills, so these insets no longer dodge a blended seam —
+   they are simply what holds each column of text where the collage put it. */
 .rpanel--projects .rpanel-body {
   padding-right: 22%;
   padding-bottom: 4rem;
@@ -399,7 +357,7 @@ a {
     padding: 0;
   }
 
-  /* Overlapping translucent fills waste ink and hurt legibility on paper. */
+  /* Side-by-side columns don't paginate; stack them for paper. */
   .collage {
     display: block;
     min-height: 0;
@@ -408,10 +366,6 @@ a {
   .rpanel {
     margin-bottom: 1.5rem;
     break-inside: avoid;
-  }
-
-  .rpanel::before {
-    display: none;
   }
 
   .rpanel-body,
